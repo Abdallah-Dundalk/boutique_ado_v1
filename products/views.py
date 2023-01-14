@@ -75,7 +75,7 @@ def product_detail(request, product_id):
 def add_product(request):
     """ Add a product to the store """
 
-    if not request.user.is_super_user:
+    if not request.user.is_superuser:
         messages.error('Sorry, only superusers can do that.')
         return redirect(reverse('home'))
       
@@ -103,7 +103,7 @@ def edit_product(request, product_id):
     """Edit a product from the store """
     product = get_object_or_404(Product, pk=product_id)
 
-    if not request.user.is_super_user:
+    if not request.user.is_superuser:
         messages.error('Sorry, only superusers can do that.')
         return redirect(reverse('home'))
     
@@ -132,7 +132,7 @@ def edit_product(request, product_id):
 def delete_product(request, product_id):
     """ Delete a product """
 
-    if not request.user.is_super_user:
+    if not request.user.is_superuser:
         messages.error('Sorry, only superusers can do that.')
         return redirect(reverse('home'))
 
