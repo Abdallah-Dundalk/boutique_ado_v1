@@ -1,1 +1,1 @@
-web: gunicorn bouitique_ado.wsgi:application
+web: gunicorn bouitique_ado_1.wsgi:application
